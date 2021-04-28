@@ -1,0 +1,3 @@
+Uma boa porção de caracteres com acento
+Maiúsculas: Á É Í Ó Ú Ã Õ Â Ê Ô À Ç
+Minúsculas: á é í ó ú ã õ â ê ô à ç
