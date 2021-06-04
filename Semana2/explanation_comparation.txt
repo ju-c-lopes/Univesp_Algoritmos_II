@@ -1,0 +1,10 @@
+__eq__(self, value)  # equal
+
+__ge__(self, value)  # greater than or equal
+
+__gt__(self,value)  # greater than
+
+__lt__(self, value)  # less than
+
+__le__(self, value)  # less than or equal
+

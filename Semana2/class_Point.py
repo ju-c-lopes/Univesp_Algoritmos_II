@@ -22,6 +22,28 @@ class Point:
         self.x += dx
         self.y += dy
 
+    def distance(self, other):
+        """Retorna a distância entre um ponto e outro"""
+        cateto_1 = other.x - self.x  # (4 - 1) = 3
+        cateto_2 = other.y - self.y  # (3 - 1) = 2
+        return ((cateto_1 ** 2) + (cateto_2 ** 2)) ** 0.5
+
+    def up(self):
+        """Move o ponto uma coordenada positiva em Y"""
+        self.move(0, 1)
+
+    def down(self):
+        """Move o ponto uma coordenada negativa em Y"""
+        self.move(0, -1)
+
+    def left(self):
+        """Move o ponto uma coordenada a esquerda em X"""
+        self.move(-1, 0)
+    
+    def right(self):
+        """Move o ponto uma coordenada a direita em X"""
+        self.move(1, 0)
+
     def __eq__(self, other):
         """self == outro quando eles têm as mesmas coordenadas"""
         return self.x == other.x and self.y == other.y

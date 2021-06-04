@@ -1,7 +1,12 @@
 class Retangulo:
     """Objeto que representa um retângulo com suas devidas medidas"""
 
-    def setTamanho(self, largura, comprimento):
+    def __init__(self, largura=1, comprimento=1):
+        """Construtor"""
+        self.largura = largura
+        self.comprimento = comprimento
+
+    def set_tamanho(self, largura, comprimento):
         """Define a largura e o comprimento do retângulo"""
         self.largura = largura
         self.comprimento = comprimento

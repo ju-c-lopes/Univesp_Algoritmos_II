@@ -1,31 +1,5 @@
 from random import shuffle
-from cards import Card
-
-
-def definir_peso():
-    """Configura o peso das cartas"""
-    definir = input('Alterar força -> digite (s)\nManter configuração -> digite (m)\nCancelar(c) ').lower()
-    if definir == 's':
-        print('Defina o peso para a sequência de cartas:')
-        for i in range(0, len(Card.valores)):
-            Card.valores[i][1] = int(input('{:>2}: '.format(Card.valores[i][0])))
-
-        for naipe, v in Card.naipes.items():
-            v[1] = int(input(f'Defina o peso do naipe {v[0]}: '))
-
-    elif definir == 'c':
-        Card.valores = [['2', 2], ['3', 3], ['4', 4], ['5', 5], ['6', 6], ['7', 7], ['8', 8],
-                        ['9', 9], ['10', 10], ['J', 11], ['Q', 12], ['K', 13], ['A', 14]]
-        Card.naipes = {'espada': ['\u2660', 2], 'copas': ['\u2665', 3],
-                       'ouro': ['\u2666', 1], 'paus': ['\u2663', 4]}
-    else:
-        pass
-
-    print('\n----------------OBS----------------'
-          '\nPara configurar a força das cartas, use o método definir_peso()'
-          '\nPara ver as cartas do baralho, digite <nome_do_baralho>.get()'
-          '\n')
-    input('Pressione qualquer tecla para continuar...')
+from cards import Card, definir_peso
 
 
 class Baralho:
@@ -37,21 +11,24 @@ class Baralho:
     # Naipes são 4 símbolos Unicode representando os 4 naipes
     naipes = ['espada', 'copas', 'ouro', 'paus']
 
-    def __init__(self, val=None, naipes=None):
+    def __init__(self, jogo='any', cards=None):
         """Inicializa baralho"""
+        print('\nPersonalizar a força das cartas?\n')
+        definir_peso()
         self.baralho = []  # baralho está inicialmente vazio
-        if val is None:
-            for i in range(0, 4):  # naipes e valores são Baralho
-                for j in range(0, len(Baralho.valores)):  # variáveis da classe
+        if jogo == 'any':
+            for i in range(0, 4):  # iterar naipes do Baralho
+                for j in range(0, 13):  # iterar valores do Baralho
                     # Inclui Carta com certo valor e naipe no baralho
                     carta = Card(Baralho.valores[j], Baralho.naipes[i])
                     self.baralho.append(carta)
             self.baralho.sort()
+
         else:
-            for chave, v in naipes.items():  # iterar naipes do Baralho
-                for j in range(0, len(val)):  # iterar valores do Baralho
+            for i in range(0, 4):  # naipes e valores são Baralho
+                for j in cards:  # variáveis da classe
                     # Inclui Carta com certo valor e naipe no baralho
-                    carta = Card(val[j], naipes[chave])
+                    carta = Card(j, Baralho.naipes[i])
                     self.baralho.append(carta)
             self.baralho.sort()
 
