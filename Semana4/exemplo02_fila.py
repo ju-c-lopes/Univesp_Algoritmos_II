@@ -1,3 +1,5 @@
+# classe implementa uma fila, filas usam o sistema FIFO (first-in, first-out)
+
 class Fila:
     def __init__(self):
         self.data = []

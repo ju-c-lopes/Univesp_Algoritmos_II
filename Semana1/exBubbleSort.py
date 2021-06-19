@@ -3,6 +3,10 @@ Ordenar lista em Python é muito simples, usando sort()
 fazemos facilmente essa manobra, porém, com este algoritmo
 entendemos como funciona a lógica da ordenação de uma lista
 aleatória
+
+Na ordenação Bubble Sort, o na sua primeira passada pela lista a ser ordenada, ele reordena o elemento
+com valor mais alto para a última posição, e nos passos seguintes vai reordenando sempre dos mais
+altos para os mais baixos
 """
 
 print("Ordenação Bolha\n")
@@ -14,7 +18,7 @@ while Trocou:                                                      # enquanto tr
     Trocou = 0                                                     # faça Trocou = 0
     i = 0
     while i < len(L)-1:                                            # laço que percorre a lista fazendo
-        if L[i] > L[i+1]:                                          #   as trocas quando necessário
+        if L[i] > L[i+1]:                                          # as trocas quando necessário
             L[i], L[i+1] = L[i+1], L[i]                            # faz a troca
             Trocou = 1                                             # se houve troca então Trocou = 1
         i += 1

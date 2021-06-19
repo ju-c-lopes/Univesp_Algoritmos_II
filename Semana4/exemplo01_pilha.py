@@ -1,3 +1,5 @@
+# Classe implementa pilha, pilhas usam o sistema LIFO (last-in, first-out)
+
 class Pilha:
     def __init__(self):
         self.data = []
