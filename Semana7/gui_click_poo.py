@@ -16,8 +16,3 @@ class ClickIt(Frame):
         time = strftime("Dia: %d %b %Y\nHora: %H:%M:%S %p\n", localtime())
         showinfo(message=time)
 
-
-raiz = Tk()
-app = ClickIt(raiz)
-app.pack()
-raiz.mainloop()
