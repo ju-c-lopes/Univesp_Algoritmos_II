@@ -1,4 +1,4 @@
-# Algoritmos e Programação de Computadores
+# Algoritmos e Programação de Computadores II
 
 <img src="img/me.png" alt="Juliano" width="10%" align="right"/><br />
 <img src="img/AlgII.png">
